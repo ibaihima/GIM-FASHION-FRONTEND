@@ -1,0 +1,58 @@
+.cart {
+  height :30px; width :auto;
+  padding-left: 20px;
+}
+.companyName {
+color : rgb(252, 25, 0);
+font-size: 50px;
+} 
+.header {
+  align-content: flex-end;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.headerRight{
+  align-content: center;
+}
+.navlinksContainer{
+  text-align: center;
+  padding: 10px;
+}
+.navlinksContainer a{
+  padding-right: 20px;
+  color: rgb(252, 25, 0);
+  text-decoration: none;
+}
+.navbar{
+  padding-right: 500px;
+  padding-top: 10px;
+}
+.middle{
+  text-align: center;
+}
+
+.picsContainer img {
+  height: 650px;
+  width: auto;
+  float: left;
+}
+
+.picsContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.title {
+  position: absolute;
+  margin-top: 200px;
+  font-size: xx-large;
+}
+
+.names {
+  margin-left: 70px;
+}
+
+em {
+  color: rgb(252, 25, 0);
+}
