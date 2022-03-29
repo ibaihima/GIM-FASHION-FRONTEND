@@ -14,6 +14,7 @@ function App() {
     fetch("http://localhost:9292/cloths")
     .then(res => res.json())
     .then((clothsData) => {
+        // console.log(clothsData)
         setCloths(clothsData)
     })
   }, []);
@@ -23,7 +24,7 @@ function App() {
       <Header /> 
         <Switch>
           <Route exact path="/">
-            <Home />
+            <Home cloths={cloths}/>
           </Route> 
           <Route path="/sweaters">
             <Sweaters />
