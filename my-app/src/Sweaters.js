@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import Card from './Card.js';
+import ClothesList from './ClothesList';
 
 function Sweaters() {
     const [sweaters, setSweaters] = useState([]);
@@ -9,13 +9,14 @@ function Sweaters() {
       .then(res => res.json())
       .then((sweatersData) => {
           // console.log(clothsData)
-          console.log(sweatersData)
+          //console.log(sweatersData)
+          setSweaters(sweatersData)
       })
     }, []);
 
     return(
         <div>
-            <Card clothes={sweaters}/>
+            <ClothesList clothes={sweaters}/>
         </div>
     )
 }

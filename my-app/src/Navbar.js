@@ -9,6 +9,7 @@ function Navbar(){
                 <NavLink to="/sweaters">Sweaters</NavLink>
                 <NavLink to="/sneakers">Sneakers</NavLink>
                 <NavLink to="/bottoms">Bottoms</NavLink>
+                <NavLink to="/about">About Us</NavLink>
             </div>
         </nav>
     )

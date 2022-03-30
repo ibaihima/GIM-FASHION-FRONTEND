@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Card from './Card';
+import ClothesList from './ClothesList';
 
 function Bottoms() {
     const [bottoms, setBottoms] = useState([]);
@@ -8,9 +8,7 @@ function Bottoms() {
         fetch("http://localhost:9292/cloths/pants")
         .then(res => res.json())
         .then(bottomsData => {
-            console.log('Bottoms incoming!')
-            console.log(bottomsData)
-            // setSneakers(sneakersData)
+            setBottoms(bottomsData)
         })
     }, []);
 
@@ -19,7 +17,7 @@ function Bottoms() {
             <div className= "filter">
             </div>
             <div> 
-            <Card clothes={bottoms}/>
+            <ClothesList clothes={bottoms}/>
             </div>
         </div>
     )

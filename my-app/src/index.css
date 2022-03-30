@@ -1,3 +1,4 @@
+
 .cart {
   height :30px; width :auto;
   padding-left: 20px;
@@ -57,50 +58,137 @@ em {
   color: rgb(252, 25, 0);
 }
 
+#loginUser {
+  color: white;
+}
 
 
-/* CARD CSS */
+/* Card CSS NOT FROM WEBSITE
+.card_container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  border: solid;
+  border-color: rgb(252, 25, 0);
+  margin: 10px;
+  flex: auto;
+}
+
+.card__face_card__face--front img {
+  height: 400px;
+  /* width: auto; */
+
+
+/* .card__face_card__face--back img{
+  height: 400px;
+  /* width: auto; */
+
+
+body {
+  background-image: url("https://wallpapercave.com/wp/wp2153682.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  /* filter: blur(8px); */
+}
+
+
+/* .scene {
+  width: 1000px;
+  display: flex;
+  justify-content: space-between;
+  perspective: 800px;
+}
+.scene .card {
+  position: relative;
+  width: 240px;
+  height: 300px;
+  color: white;
+  cursor: pointer;
+  transition: 1s ease-in-out;
+  transform-style: preserve-3d;
+}
+.scene .card:hover {
+  transform: rotateY(0.5turn);
+}
+.scene .card .card__face {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transition: 1s ease-in-out;
+  -webkit-box-reflect: below 0 linear-gradient(transparent, transparent, rgba(0, 0, 0, 0.4));
+}
+.scene .card .card__face img {
+  width: 240px;
+  height: 300px;
+  object-fit: cover;
+}
+.scene .card .card__face--back {
+  transform: rotateY(0.5turn); */
+/* }
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* */
 
 .scene {
   width: 1000px;
   display: flex;
   justify-content: space-between;
   perspective: 800px;
+}
+.scene .card {
+  position: relative;
+  width: 240px;
+  height: 300px;
+  color: white;
+  cursor: pointer;
+  transition: 1s ease-in-out;
+  transform-style: preserve-3d;
+}
+.scene .card:hover {
+  transform: rotateY(0.5turn);
+}
+.scene .card .card__face {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transition: 1s ease-in-out;
+  -webkit-box-reflect: below 0 linear-gradient(transparent, transparent, rgba(0, 0, 0, 0.4));
+}
+.scene .card .card__face img {
+  width: 240px;
+  height: 300px;
+  object-fit: cover;
+}
+.scene .card .card__face--back {
+  transform: rotateY(0.5turn);
+}
 
-  .card {
-    position: relative;
-    width: 240px;
-    height: 300px;
-    color: white;
-    cursor: pointer;
-    transition: 1s ease-in-out;
-    transform-style: preserve-3d;
-  
-    &:hover {
-      transform: rotateY(0.5turn);
-    }
-  
+/* About Us */
+.about_us_container {
+  display: flex;
+}
 
-    .card__face {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      backface-visibility: hidden;
-      transition: 1s ease-in-out;
-      -webkit-box-reflect: below 0
-        linear-gradient(transparent, transparent, rgba(0, 0, 0, 0.4));
+#about_us_logo{
+  height: 300px;
+  width: auto;
+}
 
-      img {
-        width: 240px;
-        height: 300px;
-        object-fit: cover;
-      }
+.about_us_right_side {
+  background-color: white;
+}
 
-      &--back {
-        transform: rotateY(0.5turn);
-      }
-    }
-  }
+.about_us_right_side p{
+  padding: 10px;
+  color: black;
 }
