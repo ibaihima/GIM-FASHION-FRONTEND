@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import ClothesList from './ClothesList';
 
-function Sneakers() {
+function Sneakers( {handleAddToCart} ) {
     const [sneakers, setSneakers] = useState([]);
 
     useEffect(() => {
         fetch("http://localhost:9292/cloths/sneakers")
         .then(res => res.json())
         .then((sneakersData) => {
-            console.log('Sneakers incoming!')
-            //console.log(sneakersData)
             setSneakers(sneakersData)
         })
     }, []);
@@ -19,7 +17,7 @@ function Sneakers() {
             <div className= "filter">
             </div>
             <div> 
-            <ClothesList clothes={sneakers}/>
+            <ClothesList clothes={sneakers} handleButtonClick={handleAddToCart}/>
             </div>
         </div>
     )

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ClothesList from './ClothesList';
 
-function Bottoms() {
+function Bottoms( {handleAddToCart} ) {
     const [bottoms, setBottoms] = useState([]);
 
     useEffect(() => {
@@ -17,7 +17,7 @@ function Bottoms() {
             <div className= "filter">
             </div>
             <div> 
-            <ClothesList clothes={bottoms}/>
+            <ClothesList clothes={bottoms} handleButtonClick={handleAddToCart}/>
             </div>
         </div>
     )

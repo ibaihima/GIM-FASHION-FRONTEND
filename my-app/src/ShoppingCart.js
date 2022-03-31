@@ -1,23 +1,14 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import Card from "./Card"
 
-function ShoppingCart( {loginUser} ){
-    const [userItems, setUserItems] = useState ([])
-
-    useEffect(() => {
-        if (loginUser !== {}){
-        fetch(`http://localhost:9292/users/${loginUser.id}`)
-            .then(res => res.json())
-            .then((userItemsData) => {
-                // console.log("User items: ", userItemsData)
-                setUserItems(userItemsData)
-        })}
-      }, [loginUser]);
+function ShoppingCart( { userItems, handleRemoveFromCart } ){
+    const delete_button_content = "Remove from Cart"
+    console.log(userItems)
 
     return(
         <div> 
             {userItems.map(item => {
-                return <Card cloth={item} key={item.id}/>
+                return <Card cloth={item} key={item.id} handleButtonClick={handleRemoveFromCart} item_button_content={delete_button_content}/>
             })
             }
         </div>

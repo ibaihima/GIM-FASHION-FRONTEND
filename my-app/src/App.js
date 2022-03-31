@@ -14,6 +14,7 @@ function App() {
   const [cloths, setCloths] = useState([]);
   const [users, setUsers] = useState([]);
   const [loginUser, setLoginUser] = useState({});
+  const [userItems, setUserItems] = useState([]);
 
   //fetch for cloths below
   useEffect(() => {
@@ -31,13 +32,49 @@ function App() {
         setUsers(userData)
     })
   }, []);
+  
+  useEffect(() => {
+    if (loginUser.id){
+    fetch(`http://localhost:9292/users/${loginUser.id}`)
+        .then(res => res.json())
+        .then((userItemsData) => {
+            setUserItems(userItemsData)
+    })}
+  }, [loginUser]);
 
   function onLogin (username, password){
+    console.log(users)
     let filteredUser = users.find(user => user.username === username && user.password === password)
     setLoginUser(filteredUser)
   }
 
-  console.log(cloths)
+  function handleAddToCart(clickedCloth) {
+    if (loginUser.id){
+      fetch(`http://localhost:9292/users/${loginUser.id}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 
+          user_id: loginUser.id,
+          cloth_id: clickedCloth.id         
+         })
+      })
+      .then(res => res.json())
+      .then((addedNewItem) => {
+          console.log(addedNewItem)
+          console.log(userItems)
+          setUserItems([...userItems, addedNewItem])
+      }
+      )
+    }
+    else{
+      alert("You are not logged in")
+    }
+  }
+  
+  function handleRemoveFromCart(clickedCloth) {
+    console.log(clickedCloth)
+  }
+
   return (
     <div className="App">
       <Header loginUser={loginUser}/> 
@@ -46,13 +83,13 @@ function App() {
             <Home cloths={cloths}/>
           </Route> 
           <Route path="/sweaters">
-            <Sweaters />
+            <Sweaters handleAddToCart={handleAddToCart}/>
           </Route>
           <Route path="/sneakers">
-            <Sneakers />
+            <Sneakers handleAddToCart={handleAddToCart}/>
           </Route>
           <Route path="/bottoms">
-            <Bottoms />
+            <Bottoms handleAddToCart={handleAddToCart}/>
           </Route>
           <Route path ="/login">
             <Login onLogin={onLogin} users={users}/>
@@ -61,7 +98,7 @@ function App() {
             <About />
           </Route>
           <Route path ="/shopping-cart">
-            <ShoppingCart loginUser={loginUser}/>
+            <ShoppingCart userItems={userItems} handleRemoveFromCart={handleRemoveFromCart} loginUser={loginUser}/>
           </Route>
         </Switch>
     </div>
