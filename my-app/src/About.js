@@ -12,6 +12,15 @@ function About() {
                         all in one place! We appreciate any feedback you have for our website and our <br/>
                         selection of clothes. Get to know the founders of GIM Fashion below:
                     </p>
+                    <h3>
+                        Gerald Gorman
+                    </h3>
+                    <h3>
+                        Ibaihima Soumounou
+                    </h3>
+                    <h3>
+                        Miguel Nazario
+                    </h3>
                 </div>
             </div>
         </div>

@@ -6,17 +6,17 @@ import {NavLink} from 'react-router-dom';
 
 
 function Header({loginUser}){ 
-    const login_str = loginUser.id ? "You are logged in" : "Please login" ;
+    const login_str = loginUser.id ? `Welcome, ${loginUser.name}!` : "Please login" ;
     
     return(
         <header className="header">
             <div className="companyName">
-              GIM Fashion
+              <img className="horizontal_logo" src="./assets/gim-fashion-logo.png" alt="horizontal logo"/>
             </div>
             <div  className="middle">
                 <Navbar />
             </div>
-            <div className = "headerRight">
+            <div className="headerRight">
                 <div id='loginUser'>{login_str}</div>
                 <NavLink className="login" to="/login">
                     <button className="login">

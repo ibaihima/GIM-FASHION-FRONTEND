@@ -16,12 +16,6 @@ function ShoppingCart( { userItems, handleRemoveFromCart } ){
         console.log(total_price)
     }
 
-//     let total_price = 0;
-
-//     for (let i = 0; i < userItems.length; i++) {
-//         total_price += userItems[i];
-//     }
-
     return(
         <>
             <div className="shoppin_cart_list"> 
@@ -31,7 +25,7 @@ function ShoppingCart( { userItems, handleRemoveFromCart } ){
                 }
             </div>
             <div className='cart_total'>
-                {total_price}
+                Cart Total: ${total_price}
             </div>
         </>
     )
