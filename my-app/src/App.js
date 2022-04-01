@@ -43,7 +43,6 @@ function App() {
   }, [loginUser]);
 
   function onLogin (username, password){
-    console.log(users)
     let filteredUser = users.find(user => user.username === username && user.password === password)
     setLoginUser(filteredUser)
   }
@@ -60,7 +59,6 @@ function App() {
       })
       .then(res => res.json())
       .then((addedNewItem) => {
-          console.log(addedNewItem)
           console.log(userItems)
           setUserItems([...userItems, addedNewItem])
       }
@@ -72,7 +70,18 @@ function App() {
   }
   
   function handleRemoveFromCart(clickedCloth) {
-    console.log(clickedCloth)
+    if (loginUser.id){
+      fetch(`http://localhost:9292/cloths/${clickedCloth.id}/${loginUser.id}`, {
+        method: 'DELETE'
+      })
+      .then(resp=> resp.json())
+      .then(data=>{
+        const filteredItems = userItems.filter(item => item.id !== data.cloth_id)
+        setUserItems(filteredItems)
+      })
+    } else{
+      alert("You are not logged in")
+    }
   }
 
   return (

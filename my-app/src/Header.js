@@ -6,7 +6,7 @@ import {NavLink} from 'react-router-dom';
 
 
 function Header({loginUser}){ 
-    const login_str = loginUser !== {} ? "You are logged in" : "Please login" ;
+    const login_str = loginUser.id ? "You are logged in" : "Please login" ;
     
     return(
         <header className="header">

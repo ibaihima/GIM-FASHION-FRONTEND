@@ -1,3 +1,12 @@
+.card_container img{
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.card_container .card_details {
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
 
 .cart {
   height :30px; width :auto;
@@ -6,7 +15,7 @@
 .companyName {
 color : #ce7368;
 font-size: 50px;
-} 
+}
 .header {
   align-content: flex-end;
   display: flex;
@@ -130,7 +139,7 @@ body {
 }
 .card_details button {
   width: 60%;
-  
+
 }
 
 .card_details p {
@@ -185,7 +194,7 @@ form {
   padding: 2%;
   background-image: ('./assets/logoG.png');
 }
- form Container
+
 form .con {
   display: -webkit-flex;
   display: flex;
@@ -195,7 +204,7 @@ form .con {
   flex-wrap: wrap;
   margin: 0 auto;
 }
-the header form form
+
 header {
   margin: 2% auto 10% auto;
   text-align: center;
@@ -311,5 +320,16 @@ button:hover {
  }
 }
 form {
-  background-image: url("/assets/logoG.png");
+  background-image: url("/public/assets/logoG.png");
+  background-size: cover;
+}
+
+.shoppin_cart_list{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.cart_total {
+  color: white;
 }
